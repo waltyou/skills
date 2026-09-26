@@ -21,3 +21,6 @@ venv/
 # Local scratch
 *.local.md
 .tmp/
+
+# Skills excluded from sync: add explicit /skill-name/ entries here by default.
+# Use .git/info/exclude only for exceptions specific to one device.

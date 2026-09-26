@@ -1,0 +1,6 @@
+interface:
+  display_name: "小红书图文策划"
+  short_description: "手动启动小红书图文策划、白板风配图、标题正文与素材整理流程"
+  default_prompt: "使用 $xiaohongshu-post 帮我策划一篇小红书图文，先梳理核心价值和分页内容。"
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,7 @@
+interface:
+  display_name: "Learn New Things"
+  short_description: "按你的偏好选择深度讲解或互动练习，理解新概念并检验独立应用能力"
+  default_prompt: "Use $learn-new-things to help me learn this topic. If my preferred learning approach is unclear, ask me how I want to learn before starting."
+
+policy:
+  allow_implicit_invocation: false

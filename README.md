@@ -1,66 +1,75 @@
-# skills
+# 我的 Skills 仓库
 
-A personal collection of agent skills I use often — the ones worth carrying between machines, projects, and agent runtimes.
+只管理跨设备、跨 agent 使用的全局 skills。项目专用技能随各自项目管理和备份，本仓库不设 projects/global 分类目录。Git 管理内容、历史和备份，agent 根据文档完成导入、更新及本机接入，不需要专用管理 CLI。
 
-Each top-level directory is a self-contained skill: a `SKILL.md` with YAML frontmatter (`name`, `description`) plus any reference docs or scripts it needs.
+每个 skill 在根目录有独立文件夹，包含完整脚本和资料。自建、第三方和自行维护的 fork 在 SOURCES.md 分类。只收录明确希望跨设备同步的内容。
 
-## Skills
+## 用自然语言管理
 
-| Skill | What it does |
+在本仓库打开 agent，要求它先阅读 [AGENTS.md](AGENTS.md)，然后可以说：
+
+- “从这个仓库收录 review 和 writing，记住我的选择。”
+- “检查已订阅 skills 的更新。”
+- “更新第三方 skills，保留我的改动，无法判断的迁移集中告诉我。”
+- “让这台机器的 Codex、Claude Code、OpenCode 和 pi 使用这份仓库。”
+- “同步仓库并检查本机技能是否可用。”
+
+选择和导入版本保存在 [SOURCES.md](SOURCES.md)，以后无需重新选。检查不会自动修改；更新不会订阅上游新出现的 skills；上游删除时保留最后可用版本。
+
+## 新设备
+
+1. 将仓库 clone 到本机选定的位置，各设备可以使用不同目录。
+2. 在这个仓库启动 agent，让它阅读 AGENTS.md，核实实际使用产品的全局加载路径，将该目录链接到仓库根目录。
+3. 检查发现结果，以及 CLI、MCP、认证等外部依赖。
+
+默认使用整目录链接，例如：
+
+```text
+<本机 agent 的全局 skills 加载目录> → <本机仓库根目录>
+```
+
+这是接入示意，具体加载路径按 agent 实际版本核实。接入或修复时直接检查本机路径、产品配置及链接目标，不维护本机安装记录文件。链接在各设备分别建立，不随 Git 同步；仓库移动后需重新检查链接。
+
+一次接入后，新增技能无需再建链接。目标加载目录已有内容时，先盘点、处理收录及忽略规则、保留原目录备份，再建立链接，不能直接覆盖。明确不能进入个人仓库的内容留在仓库外。
+
+整目录接入不适用时，可按产品能力使用额外搜索路径或批量逐项链接。不能假定所有 agent 都支持；发现成功不等于工具和元数据跨 agent 兼容，需要实际验证。
+
+## 在其他项目对话中新建技能
+
+让 agent 将提炼出的通用技能保存到已链接的全局 skills 目录，文件就直接落在本仓库中；同时要求它读取本仓库 AGENTS.md 并更新 SOURCES.md。无需另行搬运。项目专用技能保留在原项目。
+
+目录链接不会自动将本仓库管理约定传给其他项目的对话，需要在对话中说明，或另行配置各 agent 的全局指令。文件创建后仍须提交、推送才完成远程备份。
+
+## 不希望或不能同步的 skills
+
+- 默认使用 .gitignore：不需要同步的普通技能按具体根目录路径排除，例如 `/company-only/`。提交并推送 .gitignore 后，其他设备也会获得同一规则。示例不代表已创建该忽略项。
+- 只有明确属于单台设备的例外才使用 .git/info/exclude；该文件位于本机 Git 内部，不会随仓库同步。日常优先维护 .gitignore 即可。
+- 忽略的 skill 仍可能被 agent 加载，只是不进入普通 Git 提交；启停需要使用目标 agent 的配置。不要强制添加排除项。
+- 明确不能进入个人仓库的内容保存在仓库外，通过目标产品支持的额外加载方式接入。
+- 链接到仓库的 skill 是同一份文件，编辑它会修改仓库。忽略规则不影响已跟踪文件，已推送内容也不会从历史自动消失。
+- 只提交明确收录的内容，不自动清理本机技能。拉取时遇到本机忽略目录与上游新增目录同名，先保留并处理冲突。
+
+## 日常同步与备份
+
+- 修改前先同步；工作区干净时可 `git pull --ff-only`，有改动或分叉时让 agent 保留并处理。
+- 修改后提交并推送，其他设备再拉取；Git 不会自动同步未提交、未推送的文件。
+- 同步个人仓库和更新第三方是两个操作；换机恢复的是已经收录的版本。
+- 远程仓库和及时推送提供异地备份。凭据、插件缓存、本机安装状态不入库。
+- 整目录接入后，拉取新增和更新的技能无需再建链接。必要时刷新或重启目标 agent。
+
+## 已收录
+
+| Skill | 用途 |
 | --- | --- |
-| [`gh-axi`](gh-axi/SKILL.md) | Operate GitHub through the `gh-axi` CLI — issues, PRs, workflow runs, releases, repos, labels, gists, Projects (v2), Actions secrets/variables, search, and raw API access. |
-
-## Install
-
-Copy (or symlink) the skill directory into the skills directory your agent reads.
-
-**Shared agent skills dir** (e.g. Hermes / Claude Code):
-
-```powershell
-# Windows
-Copy-Item -Recurse -Force .\gh-axi "$env:USERPROFILE\.agents\skills\gh-axi"
-```
-
-```bash
-# macOS / Linux
-cp -R ./gh-axi ~/.agents/skills/gh-axi
-```
-
-Symlinking is preferable if you want edits here to apply immediately:
-
-```powershell
-New-Item -ItemType SymbolicLink -Path "$env:USERPROFILE\.agents\skills\gh-axi" -Target (Resolve-Path .\gh-axi)
-```
-
-```bash
-ln -s "$(pwd)/gh-axi" ~/.agents/skills/gh-axi
-```
-
-Or clone this repo once and point your agent at it. Keep skill directories flat at the repo root so a single directory can be copied into any agent's skills path unchanged.
-
-## Layout
-
-```
-skills/
-├── README.md
-├── LICENSE
-└── gh-axi/
-    └── SKILL.md
-```
-
-## Adding a skill
-
-1. Create `skills/<skill-name>/SKILL.md` with frontmatter:
-   ```yaml
-   ---
-   name: skill-name
-   description: What it does. Use when <specific triggers>.
-   ---
-   ```
-2. Keep `SKILL.md` under ~100 lines; push detail into sibling files (`REFERENCE.md`, `EXAMPLES.md`, `scripts/`) and link them.
-3. Make the `description` do the work — it is the only text an agent sees when deciding whether to load the skill.
-4. Add a row to the table above.
+| [first-principles](first-principles/SKILL.md) | 第一性原理分析：分解、假设审计、重组与实验。 |
+| [gh-axi](gh-axi/SKILL.md) | 通过 gh-axi CLI 操作 GitHub。 |
+| [grill-with-docs](grill-with-docs/SKILL.md) | 通过追问完善方案，并整理 ADR 和术语表。 |
+| [improve-codebase-architecture](improve-codebase-architecture/SKILL.md) | 分析架构改进机会，生成 HTML 报告并讨论重构方案。 |
+| [learn-new-things](learn-new-things/SKILL.md) | 先确认学习偏好，再通过深度讲解或互动练习理解知识、检验迁移应用。 |
+| [prototype](prototype/SKILL.md) | 用临时原型验证逻辑、状态模型或 UI 设计。 |
+| [tdd](tdd/SKILL.md) | 测试驱动开发与测试设计。 |
+| [xiaohongshu-post](xiaohongshu-post/SKILL.md) | 小红书图文策划、配图及发布文案制作。 |
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+自有内容采用 [MIT](LICENSE)。第三方内容保留并遵循原始许可证，来源记录在 SOURCES.md。
