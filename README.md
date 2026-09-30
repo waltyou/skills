@@ -67,6 +67,7 @@
 | [improve-codebase-architecture](improve-codebase-architecture/SKILL.md) | 分析架构改进机会，生成 HTML 报告并讨论重构方案。 |
 | [learn-new-things](learn-new-things/SKILL.md) | 先确认学习偏好，再通过深度讲解或互动练习理解知识、检验迁移应用。 |
 | [prototype](prototype/SKILL.md) | 用临时原型验证逻辑、状态模型或 UI 设计。 |
+| [show-me](show-me/SKILL.md) | 用精简图示、代码结构草图与聚焦的 HTML artifact 帮助理解当前主题。 |
 | [tdd](tdd/SKILL.md) | 测试驱动开发与测试设计。 |
 | [xiaohongshu-post](xiaohongshu-post/SKILL.md) | 小红书图文策划、配图及发布文案制作。 |
 
