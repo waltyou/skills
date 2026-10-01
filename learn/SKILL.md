@@ -1,9 +1,9 @@
 ---
-name: learn-new-things
-description: Understand concepts, papers, technologies, and practical skills through deep explanation or adaptive practice with transfer checks. Use only when the user explicitly invokes $learn-new-things or asks to use this skill.
+name: learn
+description: Understand concepts, papers, technologies, and practical skills through deep explanation or adaptive practice with transfer checks. Use only when the user explicitly invokes $learn or asks to use this skill.
 ---
 
-# Learn New Things
+# Learn
 
 Help the learner build an accurate mental model and, when requested, demonstrate that they can use it. Respond in the learner's language. Adapt to beginners and experienced learners; familiarity alone does not determine the learning mode.
 

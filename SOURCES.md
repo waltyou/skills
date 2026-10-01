@@ -5,7 +5,7 @@
 ## 自建
 
 - `first-principles`
-- `learn-new-things`
+- `learn`
 - `xiaohongshu-post`
 
 ## 第三方
