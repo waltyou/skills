@@ -101,7 +101,7 @@
 | [teach](teach/SKILL.md) | 在工作区长期教学，积累课程、参考材料与学习记录。 |
 | [wayfinder](wayfinder/SKILL.md) | 把超出单次会话的大工程规划为决策票据地图，逐张推进。 |
 | [xiaohongshu-post](xiaohongshu-post/SKILL.md) | 小红书图文策划、配图及发布文案制作。 |
-| [youtube-subtitles](youtube-subtitles/SKILL.md) | 下载 YouTube 字幕，默认英文，保存到当前工作区 raw 目录。 |
+| [youtube-subtitles](youtube-subtitles/SKILL.md) | 下载 YouTube 字幕，默认英文，保存为纯文字 .txt 到当前工作区 raw 目录，附简要总结。 |
 
 ## License
 
