@@ -5,6 +5,7 @@
 ## 自建
 
 - `first-principles`
+- `git-grouped-commit`
 - `learn`
 - `xiaohongshu-post`
 - `youtube-subtitles`
@@ -34,3 +35,4 @@
 - `show-me` 的正文可跨 agent 使用；`disable-model-invocation` 与 `agents/openai.yaml` 属于特定 agent 元数据，其他 agent 可能忽略。
 - 部分技能含专用工具调用或 agent 元数据，跨 agent 使用时需核实支持情况。
 - `youtube-subtitles` 需要 Python 和 `youtube-transcript-api` CLI；正文使用通用命令行，可供具备终端与文件访问能力的 agent 使用。
+- `git-grouped-commit` 需要 Git 及可执行命令的 agent；提交前的审批环节要求交互，不适合无人确认的批处理。同一文件内跨组拆分依赖 `git apply --cached`，不可用时退回整文件归组。

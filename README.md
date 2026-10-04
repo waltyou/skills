@@ -90,6 +90,7 @@
 | [domain-modeling](domain-modeling/SKILL.md) | 构建并打磨项目领域模型，维护 GLOSSARY.md 与 ADR。 |
 | [first-principles](first-principles/SKILL.md) | 第一性原理分析：分解、假设审计、重组与实验。 |
 | [gh-axi](gh-axi/SKILL.md) | 通过 gh-axi CLI 操作 GitHub。 |
+| [git-grouped-commit](git-grouped-commit/SKILL.md) | 把工作区改动按意图分组，先提议提交计划，经确认后再分次提交。 |
 | [grill-with-docs](grill-with-docs/SKILL.md) | 通过追问完善方案，并整理 ADR 和术语表。 |
 | [improve-codebase-architecture](improve-codebase-architecture/SKILL.md) | 分析架构改进机会，生成 HTML 报告并讨论重构方案。 |
 | [learn](learn/SKILL.md) | 按学习目的建立简要概览，或通过动态教学发现卡点、补足理解并验证独立迁移。 |
