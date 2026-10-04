@@ -1,6 +1,13 @@
 # Skills 仓库管理约定
 
-这是跨 agent 的个人全局 skills 主仓库，只管理全局技能。项目专用技能在各自项目中管理和备份；本仓库不设 projects/global 分类目录。用户通过自然语言请求 agent 完成管理，不要求开发专用 CLI。适用于 Codex、Claude Code、OpenCode、pi 及后续接入的其他 agent。
+这是跨 agent 的个人全局 skills 和全局指令主仓库。项目专用技能与指令在各自项目中管理和备份；本仓库不设 projects/global 分类目录。用户通过自然语言请求 agent 完成管理，不要求开发专用 CLI。适用于 Codex、Claude Code、OpenCode、pi 及后续接入的其他 agent。
+
+## 全局指令
+
+- 根目录 AGENTS.md 管理本仓库；agent-instructions/AGENTS.md 保存供各 agent 的 user level 加载的个人全局指令。不要将根目录文件链接为全局指令。
+- agent-instructions 是指令目录，不是 skill；不添加 SKILL.md，也不登记到 SOURCES.md 的技能订阅中。技能目录继续在根目录平铺。
+- 全局指令共享一份正文。接入时核实目标产品的指令文件名、加载位置和优先级；必要的产品差异在 README 中说明，不假定各 agent 的加载行为相同。
+- 全局指令使用文件链接，不能使用目录 junction。链接在每台设备分别建立；已有目标文件时先检查内容和链接目标，保留备份并处理差异，不能直接覆盖。修改后核实链接目标与实际加载结果。
 
 ## 内容与记录
 

@@ -1,6 +1,6 @@
-# 我的 Skills 仓库
+# 我的 Skills 与全局指令仓库
 
-只管理跨设备、跨 agent 使用的全局 skills。项目专用技能随各自项目管理和备份，本仓库不设 projects/global 分类目录。Git 管理内容、历史和备份，agent 根据文档完成导入、更新及本机接入，不需要专用管理 CLI。
+管理跨设备、跨 agent 使用的全局 skills 和个人全局指令。项目专用技能与指令随各自项目管理和备份，本仓库不设 projects/global 分类目录。Git 管理内容、历史和备份，agent 根据文档完成导入、更新及本机接入，不需要专用管理 CLI。
 
 每个 skill 在根目录有独立文件夹，包含完整脚本和资料。自建、第三方和自行维护的 fork 在 SOURCES.md 分类。只收录明确希望跨设备同步的内容。
 
@@ -34,6 +34,30 @@
 
 整目录接入不适用时，可按产品能力使用额外搜索路径或批量逐项链接。不能假定所有 agent 都支持；发现成功不等于工具和元数据跨 agent 兼容，需要实际验证。
 
+## 个人全局指令
+
+| 文件 | 用途 |
+| --- | --- |
+| [AGENTS.md](AGENTS.md) | 本仓库的管理约定。 |
+| [agent-instructions/AGENTS.md](agent-instructions/AGENTS.md) | 供 user level 加载的个人全局指令，包含八条沟通规则、来源说明及共享配置的默认路径。 |
+
+`agent-instructions/` 不是 skill，不包含 SKILL.md。全局指令随本仓库一起保存和同步，正文不依赖特定 agent 的工具或本机绝对路径。
+
+默认以 `~/.agents/AGENTS.md` 作为用户维护全局规则的共享入口。将这个文件链接到仓库内的 `agent-instructions/AGENTS.md` 后，经共享入口编辑会直接更新仓库文件。各 agent 的专用指令文件可仅保留读取共享入口的指引。共享技能入口为 `~/.agents/skills/`。这些是个人配置约定，各产品是否自动读取仍须在接入时核实。
+
+接入全局指令时，可以让 agent：“将这份仓库的 agent-instructions/AGENTS.md 链接到我使用的 agent 的 user level 指令文件，先检查现有内容。”
+
+1. 核实目标产品的指令文件名、加载位置及优先级。下面的路径仅为示意，不代表已验证各产品的兼容性。
+2. 检查目标文件及已有链接。已指向正确文件时跳过；已有其他内容时先保留备份并处理差异。
+3. 建立指向仓库内全局指令文件的文件符号链接。Windows 的目录 junction 不适用于单个文件。
+4. 按产品要求刷新或重启，并核实实际加载结果。只建立链接不能证明指令已生效。
+
+```text
+~/.agents/AGENTS.md → <本机仓库根目录>/agent-instructions/AGENTS.md
+```
+
+不要将仓库根目录的 AGENTS.md 链接到 user level。各设备单独建立链接；仓库移动后重新检查。通过链接编辑会直接修改仓库内的正文，提交并推送后其他设备才能拉取这些改动。
+
 ## 在其他项目对话中新建技能
 
 让 agent 将提炼出的通用技能保存到已链接的全局 skills 目录，文件就直接落在本仓库中；同时要求它读取本仓库 AGENTS.md 并更新 SOURCES.md。无需另行搬运。项目专用技能保留在原项目。
@@ -61,15 +85,22 @@
 
 | Skill | 用途 |
 | --- | --- |
+| [code-review](code-review/SKILL.md) | 从指定起点审查改动：代码标准与需求规格两轴并行审查。 |
+| [codebase-design](codebase-design/SKILL.md) | 深模块设计术语、接口与依赖设计，以及多方案比较。 |
+| [domain-modeling](domain-modeling/SKILL.md) | 构建并打磨项目领域模型，维护 GLOSSARY.md 与 ADR。 |
 | [first-principles](first-principles/SKILL.md) | 第一性原理分析：分解、假设审计、重组与实验。 |
 | [gh-axi](gh-axi/SKILL.md) | 通过 gh-axi CLI 操作 GitHub。 |
 | [grill-with-docs](grill-with-docs/SKILL.md) | 通过追问完善方案，并整理 ADR 和术语表。 |
 | [improve-codebase-architecture](improve-codebase-architecture/SKILL.md) | 分析架构改进机会，生成 HTML 报告并讨论重构方案。 |
-| [learn](learn/SKILL.md) | 先确认学习偏好，再通过深度讲解或互动练习理解知识、检验迁移应用。 |
+| [learn](learn/SKILL.md) | 按学习目的建立简要概览，或通过动态教学发现卡点、补足理解并验证独立迁移。 |
 | [prototype](prototype/SKILL.md) | 用临时原型验证逻辑、状态模型或 UI 设计。 |
+| [retro](retro/SKILL.md) | 复盘一次编码会话，提出环境与流程改进建议。 |
 | [show-me](show-me/SKILL.md) | 用精简图示、代码结构草图与聚焦的 HTML artifact 帮助理解当前主题。 |
 | [tdd](tdd/SKILL.md) | 测试驱动开发与测试设计。 |
+| [teach](teach/SKILL.md) | 在工作区长期教学，积累课程、参考材料与学习记录。 |
+| [wayfinder](wayfinder/SKILL.md) | 把超出单次会话的大工程规划为决策票据地图，逐张推进。 |
 | [xiaohongshu-post](xiaohongshu-post/SKILL.md) | 小红书图文策划、配图及发布文案制作。 |
+| [youtube-subtitles](youtube-subtitles/SKILL.md) | 下载 YouTube 字幕，默认英文，保存到当前工作区 raw 目录。 |
 
 ## License
 

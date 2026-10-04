@@ -1,6 +1,8 @@
-# Explanation mode
+# Build an overview
 
-Deliver a coherent explanation using the four lenses below. Scale depth to the learner and scope; a request for one layer can stay within that layer. Lead with the main insight and build its supporting reasoning. The purpose is a mental model that can explain behavior and predict limits. If the user requests subsequent testing, switch to practice with a fresh task whose answer was not demonstrated.
+Default to a concise, connected overview: what the concept is, what problem it addresses, how its core idea works, and where it applies or breaks down. Start with plain language and one concrete example when useful. End with the central takeaway and essential boundary; no quiz is required. Completing the overview establishes that the explanation was delivered, not that the learner can independently apply it.
+
+The lenses below are a depth toolkit, not a mandatory four-part lecture. Use only enough detail to establish the overall picture. Expand a mechanism or layer when requested, and use the same toolkit to repair a specific gap in the adaptive loop. If the user wants independent application or testing, continue with [practice.md](practice.md), preserving what has already been explained.
 
 ## Layer 1: Demystify
 

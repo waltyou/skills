@@ -1,16 +1,16 @@
-# Practice mode
+# Develop independent understanding
 
-For learning through practice, follow the adaptive loop below. For a request to test existing understanding, begin with one unaided task near the claimed capability; do not explain the answer first. Use the result to locate gaps and teach only what is needed. If the learner already demonstrates the target, advance to transfer or close rather than forcing a lesson.
+Follow an adaptive teaching loop: establish a starting point, locate obstacles, repair understanding, check transfer, and return to independent performance. Use it for both unfamiliar material and supposedly familiar knowledge. For a request to test existing understanding, begin with one unaided task near the claimed capability; do not explain the answer first. For wholly unfamiliar material, provide enough foundational explanation to make a first task meaningful instead of testing untaught knowledge. If the learner already demonstrates the target, advance to transfer or close rather than forcing a lesson.
 
-Use intuition, problem pressure, mechanisms and boundaries, and abstraction as needed within the current step. Read [explanation.md](explanation.md) when a deeper explanatory treatment helps; its full four-layer exposition is optional in practice.
+Use intuition, problem pressure, mechanisms and boundaries, and abstraction as needed within the current step. Read [explanation.md](explanation.md) when its explanatory lenses help repair a gap; using them does not change the learning direction.
 
 ## 1. Establish the target and probe
 
 Use the user's request, supplied materials, and relevant prior answers to identify the target, starting point, and available time. Ask only for information that changes the next teaching decision.
 
-Express the target as something observable: explain a mechanism, solve a class of problems, make a decision, or perform a task. Keep a broad ambition as context while choosing a useful local milestone.
+Express the target as something observable: explain a mechanism, solve a class of problems, make a decision, or perform a task. State the completion criterion before practice, including what the learner should demonstrate independently on a fresh task. Keep a broad ambition as context while choosing a useful local milestone.
 
-Ask one diagnostic question at a time and wait for the answer. Start near the likely knowledge boundary, then inspect only prerequisites relevant to the target. Accept "I don't know" as useful evidence. If adequate evidence already exists, begin at the first uncertain step without repeating a placement quiz.
+Choose the starting point from the available evidence. For unfamiliar material, begin with a small foundation and then a task using it. For claimed understanding, begin with an unaided diagnostic task. Ask one question at a time and wait for the answer. Inspect only prerequisites relevant to the target. Accept "I don't know" as useful evidence. If adequate evidence already exists, begin at the first uncertain step without repeating a placement quiz.
 
 Distinguish missing recall, missing concepts, broken causal reasoning, difficulty applying an idea, and difficulty expressing it. Use that distinction to choose retrieval cues, examples, derivation, transfer practice, or explanation rehearsal. Treat self-reports and single answers as provisional evidence.
 
@@ -36,7 +36,7 @@ Use visualizations, code, demonstrations, or analogies when they resolve a speci
 
 ## 4. Verify transfer and close
 
-After the local steps, change a condition, representation, or setting and ask the learner to apply the idea without fresh help. Choose a task whose answer has not already been demonstrated. If the learner struggles, locate the failing dependency and return to the relevant step.
+After the local steps, change a condition, representation, or setting and ask the learner to apply the idea without fresh help. Choose a task whose answer has not already been demonstrated. If the learner struggles, locate the failing dependency, teach or scaffold that step, then return to a fresh independent task. Assisted success does not complete the loop. When the stated completion criterion is met, summarize and stop; explain any necessary change in scope before adding a new milestone.
 
 Distinguish the evidence:
 

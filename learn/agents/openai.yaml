@@ -1,7 +1,7 @@
 interface:
   display_name: "Learn"
-  short_description: "按你的偏好选择深度讲解或互动练习，理解新概念并检验独立应用能力"
-  default_prompt: "Use $learn to help me learn this topic. If my preferred learning approach is unclear, ask me how I want to learn before starting."
+  short_description: "按学习目的建立简要概览，或动态发现卡点、补足理解并验证独立迁移能力"
+  default_prompt: "Use $learn to help me learn this topic. If my purpose is unclear, ask whether I want a concise overview or adaptive teaching toward independent understanding and application."
 
 policy:
   allow_implicit_invocation: false
